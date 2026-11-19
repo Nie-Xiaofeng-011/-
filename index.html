@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>成成小店 · 离线销售管理</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <b>🏪 <span id="shopName">成成小店</span></b>
+  <span class="lamp warn" id="lamp">检测存储中…</span>
+  <button onclick="UI.exportAll()">📤 导出全库 JSON</button>
+  <button onclick="document.getElementById('importFile').click()">📥 导入 JSON</button>
+  <button onclick="Store.bindFile()">💾 绑定本地文件自动保存</button>
+  <button onclick="UI.exportZip()">🗜 导出整包 ZIP</button>
+  <input type="file" id="importFile" accept=".json" hidden onchange="UI.importAll(this)">
+</header>
+
+<nav id="nav"></nav>
+<main id="main"></main>
+<footer>双击 index.html 即可运行 · 无域名 · 无服务器 · 用完记得导出备份</footer>
+<div id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
